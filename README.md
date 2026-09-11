@@ -1,1 +1,1 @@
-# princeeditz.github.io
+# princeditz.github.io
