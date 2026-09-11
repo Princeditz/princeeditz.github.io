@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030711">
+
+<title>PRINCE EDITZ | Gaming & Creative Studio</title>
+
+<style>
+
+:root{
+    --bg:#030711;
+    --card:#071222;
+    --card2:#0a172b;
+    --blue:#00aaff;
+    --blue2:#0066ff;
+    --purple:#7b2cff;
+    --pink:#ff2bd6;
+    --white:#ffffff;
+    --muted:#91a4bd;
+    --border:#123252;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at 80% 25%,#16235b55,transparent 30%),
+        radial-gradient(circle at 20% 60%,#003f7050,transparent 35%),
+        var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:82px;
+    z-index:1000;
+    background:rgba(3,7,17,.88);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid #00aaff33;
+}
+
+.nav-container{
+    max-width:1200px;
+    height:100%;
+    margin:auto;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-weight:800;
+    letter-spacing:4px;
+    color:var(--blue);
+}
+
+.brand img{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center;
+    border:2px solid var(--blue);
+    background:#050d18;
+    box-shadow:
+        0 0 12px #00aaff,
+        0 0 28px #00aaff66;
+    display:block;
+    transition:.3s ease;
+}
+
+.brand img:hover{
+    transform:scale(1.08);
+    box-shadow:
+        0 0 18px #00aaff,
+        0 0 38px #00aaff99;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:#c9d6e7;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--blue);
+    text-shadow:0 0 12px var(--blue);
+}
+
+.nav-btn{
+    padding:12px 18px;
+    border:1px solid var(--blue);
+    border-radius:30px;
+    color:white !important;
+    background:#00aaff12;
+}
+
+.nav-btn:hover{
+    background:var(--blue);
+    color:#00101c !important;
+}
+
+.menu-btn{
+    display:none;
+    font-size:31px;
+    cursor:pointer;
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu{
+    position:fixed;
+    top:82px;
+    left:0;
+    width:100%;
+    background:#030711f5;
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid #00aaff33;
+    display:none;
+    z-index:999;
+    padding:20px;
+}
+
+.mobile-menu.show{
+    display:block;
+}
+
+.mobile-menu a{
+    display:block;
+    padding:15px;
+    color:#c7d4e4;
+    border-bottom:1px solid #ffffff0b;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:130px 20px 70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#0066ff18;
+    filter:blur(80px);
+    top:20%;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.hero-content{
+    width:100%;
+    max-width:1100px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 25px;
+    border:1px solid #00aaff99;
+    border-radius:40px;
+    color:#70caff;
+    font-size:14px;
+    letter-spacing:4px;
+    margin-bottom:45px;
+    background:#031427aa;
+    box-shadow:0 0 20px #00aaff15;
+}
+
+.status-dot{
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:#67c6ff;
+    box-shadow:0 0 14px #67c6ff;
+}
+
+
+/* ================= HERO LOGO ================= */
+
+.hero-logo{
+    width:460px;
+    height:460px;
+    max-width:82vw;
+    max-height:82vw;
+    margin:0 auto 55px;
+    border-radius:50%;
+    border:1px solid #00aaffaa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle,#0b2942,#061426 60%,#020912);
+    box-shadow:
+        inset 0 0 70px #00aaff20,
+        0 0 35px #00aaff18;
+}
+
+.hero-logo-text{
+    text-align:center;
+}
+
+.hero-logo-text h2{
+    font-size:145px;
+    font-style:italic;
+    line-height:.8;
+    color:#00aaff;
+    text-shadow:
+        0 0 12px #00aaff,
+        0 0 45px #00aaff88;
+}
+
+.hero-logo-text p{
+    margin-top:28px;
+    font-size:19px;
+    letter-spacing:12px;
+    color:#a7dfff;
+}
+
+
+/* ================= HERO TITLE ================= */
+
+.hero h1{
+    font-size:clamp(55px,9vw,105px);
+    line-height:.9;
+    font-weight:900;
+    letter-spacing:-5px;
+    margin-bottom:35px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+    text-shadow:0 0 25px #00aaff66;
+}
+
+.hero h1 .outline{
+    color:transparent;
+    -webkit-text-stroke:2px #8793a3;
+    text-shadow:none;
+}
+
+.hero-sub{
+    max-width:650px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.8;
+    font-size:17px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 28px;
+    border-radius:8px;
+    font-weight:800;
+    letter-spacing:1px;
+    border:1px solid var(--blue);
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:#00101b;
+    box-shadow:0 0 25px #00aaff33;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 35px #00aaff77;
+}
+
+.btn-outline{
+    background:#00aaff08;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:#00aaff18;
+    transform:translateY(-3px);
+}
+
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:var(--blue);
+    font-weight:800;
+    letter-spacing:4px;
+}
+
+.section-title h2{
+    margin-top:12px;
+    font-size:clamp(35px,5vw,55px);
+}
+
+.section-title p{
+    max-width:650px;
+    margin:15px auto 0;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+
+/* ================= WORK ================= */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.filter{
+    padding:10px 18px;
+    border:1px solid var(--border);
+    border-radius:30px;
+    background:#06101e;
+    color:#9eb0c5;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter.active,
+.filter:hover{
+    color:white;
+    border-color:var(--blue);
+    background:#00aaff16;
+}
+
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.work-card{
+    min-height:260px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    background:var(--card);
+    position:relative;
+    transition:.35s;
+}
+
+.work-card:hover{
+    transform:translateY(-7px);
+    border-color:#00aaff88;
+    box-shadow:0 15px 40px #0008;
+}
+
+.work-video{
+    width:100%;
+    height:230px;
+    overflow:hidden;
+    background:#000;
+    position:relative;
+}
+
+.work-video video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.work-image{
+    height:230px;
+    overflow:hidden;
+    background:#000;
+    position:relative;
+}
+
+.work-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    transition:.4s ease;
+}
+
+.work-card:hover .work-image img{
+    transform:scale(1.05);
+}
+
+.work-info{
+    padding:18px;
+}
+
+.work-info h3{
+    font-size:17px;
+}
+
+.work-info p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:7px;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service-card{
+    padding:32px 25px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:
+        linear-gradient(145deg,#071525,#040b16);
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    border-color:#00aaff88;
+    box-shadow:0 20px 45px #0009;
+}
+
+.service-card.featured{
+    border-color:#00aaff;
+    box-shadow:0 0 35px #00aaff14;
+}
+
+.service-card h3{
+    font-size:23px;
+    margin-bottom:13px;
+}
+
+.price{
+    font-size:38px;
+    font-weight:900;
+    color:var(--blue);
+    margin-bottom:20px;
+}
+
+.price span{
+    font-size:13px;
+    color:var(--muted);
+    font-weight:normal;
+}
+
+.service-card ul{
+    list-style:none;
+    color:#aebdd0;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.service-card li::before{
+    content:"✓";
+    color:var(--blue);
+    margin-right:10px;
+}
+
+
+/* ================= ORDER ================= */
+
+.order-box{
+    max-width:750px;
+    margin:auto;
+    padding:35px;
+    background:#061120dd;
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 25px 70px #0007;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    color:#b5c6d9;
+    font-size:13px;
+    font-weight:700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #173553;
+    background:#030a14;
+    color:white;
+    border-radius:9px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 15px #00aaff15;
+}
+
+.form-group textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.order-submit{
+    width:100%;
+    margin-top:22px;
+    cursor:pointer;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text h2{
+    font-size:45px;
+    margin:15px 0 20px;
+}
+
+.about-text h2 span{
+    color:var(--blue);
+}
+
+.about-text p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+.about-box{
+    padding:35px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    background:
+        radial-gradient(circle at top right,#16285b,#061120);
+}
+
+.about-box h3{
+    color:var(--blue);
+    margin-bottom:18px;
+}
+
+.about-list{
+    list-style:none;
+}
+
+.about-list li{
+    padding:14px 0;
+    border-bottom:1px solid #ffffff0b;
+    color:#c4d1df;
+}
+
+.about-list strong{
+    color:white;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-links{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.contact-card{
+    min-width:210px;
+    padding:22px;
+    text-align:center;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:#061120;
+    transition:.3s;
+}
+
+.contact-card:hover{
+    border-color:var(--blue);
+    transform:translateY(-5px);
+}
+
+.contact-card span{
+    display:block;
+    color:var(--blue);
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.contact-card small{
+    color:#a1b2c7;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:35px 20px;
+    text-align:center;
+    border-top:1px solid #00aaff22;
+    color:#6f8196;
+    font-size:13px;
+}
+
+footer strong{
+    color:var(--blue);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .work-grid,
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-logo{
+        width:380px;
+        height:380px;
+    }
+
+    .hero-logo-text h2{
+        font-size:110px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        height:76px;
+    }
+
+    .nav-container{
+        padding:0 18px;
+    }
+
+    .brand{
+        gap:10px;
+        font-size:13px;
+        letter-spacing:3px;
+    }
+
+    .brand img{
+        width:44px;
+        height:44px;
+        min-width:44px;
+    }
+
+    .mobile-menu{
+        top:76px;
+    }
+
+    section{
+        padding:75px 17px;
+    }
+
+    .hero{
+        padding:110px 15px 60px;
+    }
+
+    .status{
+        font-size:11px;
+        letter-spacing:2px;
+        padding:12px 17px;
+    }
+
+    .hero-logo{
+        width:320px;
+        height:320px;
+        margin-bottom:45px;
+    }
+
+    .hero-logo-text h2{
+        font-size:90px;
+    }
+
+    .hero-logo-text p{
+        font-size:14px;
+        letter-spacing:7px;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-4px;
+    }
+
+    .hero-sub{
+        font-size:14px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .order-box{
+        padding:22px;
+    }
+
+    .about-text h2{
+        font-size:35px;
+    }
+
+    .work-video,
+    .work-image{
+        height:240px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="brand">
+
+            <img
+                src="IMG_8256(5).jpeg"
+                alt="PRINCE EDITZ Logo"
+                loading="eager"
+            >
+
+            <span>PRINCE EDITZ</span>
+
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="#home">HOME</a>
+            <a href="#work">WORK</a>
+            <a href="#services">SERVICES</a>
+            <a href="#order">ORDER</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+
+            <a href="#order" class="nav-btn">
+                START PROJECT
+            </a>
+
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MOBILE MENU ================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#home" onclick="toggleMenu()">HOME</a>
+    <a href="#work" onclick="toggleMenu()">WORK</a>
+    <a href="#services" onclick="toggleMenu()">SERVICES</a>
+    <a href="#order" onclick="toggleMenu()">ORDER</a>
+    <a href="#about" onclick="toggleMenu()">ABOUT</a>
+    <a href="#contact" onclick="toggleMenu()">CONTACT</a>
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-logo">
+
+            <div class="hero-logo-text">
+
+                <h2>PE</h2>
+
+                <p>PRINCE EDITZ</p>
+
+            </div>
+
+        </div>
+
+        <div class="status">
+
+            <span class="status-dot"></span>
+
+            AVAILABLE FOR PROJECTS
+
+        </div>
+
+        <h1>
+
+            CREATE.<br>
+
+            <span>
+                EDIT.
+            </span><br>
+
+            <span class="outline">
+                DOMINATE.
+            </span>
+
+        </h1>
+
+        <p class="hero-sub">
+
+            Gaming edits, Free Fire montages, posters and creative
+            designs made to make your content stand out.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#order" class="btn btn-primary">
+                START A PROJECT
+            </a>
+
+            <a href="#work" class="btn btn-outline">
+                VIEW MY WORK
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WORK ================= -->
+
+<section id="work">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>MY PORTFOLIO</small>
+
+            <h2>SELECTED WORK</h2>
+
+            <p>
+                A collection of gaming edits, montages and creative
+                designs from PRINCE EDITZ.
+            </p>
+
+        </div>
+
+
+        <div class="filters">
+
+            <button
+                class="filter active"
+                onclick="filterWork('all',this)"
+            >
+                ALL
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterWork('freefire',this)"
+            >
+                FREE FIRE
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterWork('montage',this)"
+            >
+                MONTAGE
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterWork('design',this)"
+            >
+                DESIGN
+            </button>
+
+        </div>
+
+
+        <div class="work-grid">
+
+
+            <!-- FREE FIRE VIDEO -->
+
+            <div
+                class="work-card"
+                data-category="freefire"
+            >
+
+                <div class="work-video">
+
+                    <video
+                        autoplay
+                        loop
+                        playsinline
+                        controls
+                    >
+
+                        <source
+                            src="freefire_middle_sound.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support video playback.
+
+                    </video>
+
+                </div>
+
+                <div class="work-info">
+
+                    <h3>
+                        FREE FIRE EDIT
+                    </h3>
+
+                    <p>
+                        Gaming character edit
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MONTAGE VIDEO -->
+
+            <div
+                class="work-card"
+                data-category="montage"
+            >
+
+                <div class="work-video">
+
+                    <video
+                        autoplay
+                        loop
+                        playsinline
+                        controls
+                    >
+
+                        <source
+                            src="montage_middle_sound.mp4"
+                            type="video/mp4"
+                        >
+
+                        Your browser does not support video playback.
+
+                    </video>
+
+                </div>
+
+                <div class="work-info">
+
+                    <h3>
+                        FREE FIRE MONTAGE
+                    </h3>
+
+                    <p>
+                        Cinematic gaming montage • Beat sync
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN PROJECT -->
+
+            <div
+                class="work-card"
+                data-category="design"
+            >
+
+                <div class="work-image">
+
+                    <img
+                        src="design-project.jpeg"
+                        alt="PRINCE EDITZ Design Project"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="work-info">
+
+                    <h3>
+                        GAMING DESIGN
+                    </h3>
+
+                    <p>
+                        Poster & social media design
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>WHAT I OFFER</small>
+
+            <h2>MY SERVICES</h2>
+
+            <p>
+                Professional editing and creative services for gamers
+                and content creators.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <!-- BASIC EDIT -->
+
+            <div class="service-card">
+
+                <h3>
+                    Basic Edit
+                </h3>
+
+                <div class="price">
+
+                    ₦3,000
+
+                    <span>
+                        / project
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>Clean video editing</li>
+                    <li>Beat synchronization</li>
+                    <li>Basic transitions</li>
+                    <li>Color adjustment</li>
+                    <li>TikTok ready format</li>
+
+                </ul>
+
+                <a
+                    href="#order"
+                    class="btn btn-outline"
+                >
+                    ORDER NOW
+                </a>
+
+            </div>
+
+
+            <!-- PREMIUM EDIT -->
+
+            <div class="service-card featured">
+
+                <h3>
+                    Premium Edit
+                </h3>
+
+                <div class="price">
+
+                    ₦6,000
+
+                    <span>
+                        / project
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>Advanced editing</li>
+                    <li>Beat synchronization</li>
+                    <li>Advanced transitions</li>
+                    <li>Visual effects</li>
+                    <li>Color grading</li>
+                    <li>Cinematic finishing</li>
+
+                </ul>
+
+                <a
+                    href="#order"
+                    class="btn btn-primary"
+                >
+                    ORDER NOW
+                </a>
+
+            </div>
+
+
+            <!-- LOGO / POSTER -->
+
+            <div class="service-card">
+
+                <h3>
+                    Logo / Poster
+                </h3>
+
+                <div class="price">
+
+                    ₦2,000
+
+                    <span>
+                        / design
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>Gaming logo design</li>
+                    <li>Profile picture</li>
+                    <li>Gaming poster</li>
+                    <li>Social media artwork</li>
+                    <li>High quality export</li>
+
+                </ul>
+
+                <a
+                    href="#order"
+                    class="btn btn-outline"
+                >
+                    ORDER NOW
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORDER ================= -->
+
+<section id="order">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>
+                LET'S WORK
+            </small>
+
+            <h2>
+                START YOUR PROJECT
+            </h2>
+
+            <p>
+                Fill in the details below and your order will be
+                prepared for WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="order-box">
+
+            <form id="orderForm">
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            TikTok / Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="@yourusername"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Select Service
+                        </label>
+
+                        <select
+                            id="service"
+                            required
+                        >
+
+                            <option value="">
+                                Choose a service
+                            </option>
+
+                            <option value="Basic Edit - ₦3,000">
+                                Basic Edit - ₦3,000
+                            </option>
+
+                            <option value="Premium Edit - ₦6,000">
+                                Premium Edit - ₦6,000
+                            </option>
+
+                            <option value="Logo / Poster - ₦2,000">
+                                Logo / Poster - ₦2,000
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Quantity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            value="1"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Tell me about your project
+                        </label>
+
+                        <textarea
+                            id="details"
+                            placeholder="Describe what you want edited or designed..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary order-submit"
+                >
+                    SEND ORDER ON WHATSAPP
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+                <small style="color:#00aaff;letter-spacing:4px;">
+                    ABOUT PRINCE EDITZ
+                </small>
+
+                <h2>
+
+                    I TURN CONTENT INTO
+                    <span>
+                        IMPACT.
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    PRINCE EDITZ is a gaming and creative editing studio
+                    focused on creating eye-catching edits for gamers,
+                    TikTok creators and content creators.
+
+                </p>
+
+                <p>
+
+                    From Free Fire montages to posters and social media
+                    designs, every project is created with a strong
+                    cinematic and gaming-focused style.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>
+                    PRINCE EDITZ
+                </h3>
+
+                <ul class="about-list">
+
+                    <li>
+                        <strong>Specialty:</strong>
+                        Gaming & Creative Editing
+                    </li>
+
+                    <li>
+                        <strong>Main Platform:</strong>
+                        TikTok
+                    </li>
+
+                    <li>
+                        <strong>Focus:</strong>
+                        Free Fire & Gaming Content
+                    </li>
+
+                    <li>
+                        <strong>Available:</strong>
+                        Open for Projects
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>
+                FIND ME ONLINE
+            </small>
+
+            <h2>
+                CONTACT
+            </h2>
+
+            <p>
+                Follow PRINCE EDITZ or contact me directly for your
+                next project.
+            </p>
+
+        </div>
+
+
+        <div class="contact-links">
+
+
+            <a
+                href="https://www.tiktok.com/@princeditz50"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card"
+            >
+
+                <span>
+                    TIKTOK
+                </span>
+
+                <small>
+                    @princeditz50
+                </small>
+
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/princeditz50"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card"
+            >
+
+                <span>
+                    INSTAGRAM
+                </span>
+
+                <small>
+                    @princeditz50
+                </small>
+
+            </a>
+
+
+            <a
+                href="https://wa.me/2349039719158"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card"
+            >
+
+                <span>
+                    WHATSAPP
+                </span>
+
+                <small>
+                    09039719158
+                </small>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026
+
+    <strong>
+        PRINCE EDITZ
+    </strong>
+
+    . All Rights Reserved.
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    const menu =
+        document.getElementById("mobileMenu");
+
+    menu.classList.toggle("show");
+
+}
+
+
+/* ================= PORTFOLIO FILTER ================= */
+
+function filterWork(category, button){
+
+    const cards =
+        document.querySelectorAll(".work-card");
+
+    const filters =
+        document.querySelectorAll(".filter");
+
+
+    filters.forEach(function(item){
+
+        item.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    cards.forEach(function(card){
+
+        if(
+            category === "all" ||
+            card.dataset.category === category
+        ){
+
+            card.style.display = "block";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* ================= WHATSAPP ORDER ================= */
+
+document
+.getElementById("orderForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name").value;
+
+    const username =
+        document.getElementById("username").value;
+
+    const service =
+        document.getElementById("service").value;
+
+    const quantity =
+        document.getElementById("quantity").value;
+
+    const details =
+        document.getElementById("details").value;
+
+
+    const message =
+`🔥 PRINCE EDITZ NEW ORDER
+
+👤 Name:
+${name}
+
+🎮 TikTok / Username:
+${username}
+
+🎬 Service:
+${service}
+
+📦 Quantity:
+${quantity}
+
+📝 Project Details:
+${details}
+
+Please let me know the next step.`;
+
+
+    const whatsappURL =
+        "https://wa.me/2349039719158?text="
+        + encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
